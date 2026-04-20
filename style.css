@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff;
+    font-family: 'VT323', monospace;
+    height: 100vh;
+    overflow: hidden;
+    color: #000;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ==============================
+   GİRİŞ SAYFASI (ENTRY PAGE)
+   ============================== */
+#entry-page {
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.top-bar-line {
+    width: 100%;
+    height: 4px;
+    background-color: #000;
+    position: absolute; 
+    top: 40px;
+    left: 0;
+    z-index: 10;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: scale(0.9); 
+    margin-top: -20px; 
+    gap: 25px;
+}
+/* 1. İki giriş grubu (Plaintext ve Key) arasını açar */
+.inputs-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Bu değeri artırdıkça iki grup birbirinden uzaklaşır */
+}
+
+/* 2. Senin CSS'inde hiç olmayan ama HTML'inde kullandığın o sınıf: */
+.input-label {
+    width: 100%;
+    text-align: center;   /* Yazıları ortalar */
+    padding-right: 15px; /* Kutuların hizasına göre ince ayar */
+    font-size: 18px;
+    margin-bottom: 8px; /* Yazı ile altındaki kutucukların arasını açar */
+    text-transform: uppercase;
+}
+
+.main-title {
+    font-size: 55px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.cat-gif {
+    width: 190px;
+    height: auto;
+    margin-bottom: 7px;
+}
+
+.bit-row {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.bit-row input {
+    width: 40px;
+    height: 50px;
+    border: 3px solid #000;
+    font-family: inherit;
+    font-size: 30px;
+    text-align: center;
+    outline: none;
+    padding-right: 5px;
+}
+
+.retro-btn {
+    background: #fff;
+    border: 2px solid #000;
+    font-family: inherit;
+    font-size: 20px; 
+    padding: 6px 15px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px #000;
+    margin-top: 30px;
+}
+
+.retro-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px #000;
+}
+
+/* ==============================
+   SÜREÇ SAYFASI (PROCESS PAGE)
+   ============================== */
+#process-page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 10px 40px;
+}
+
+.compact-stepper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: 2px solid #000;
+}
+
+.step-item {
+    font-size: 20px;
+    color: #aaa;
+}
+
+.step-item.active {
+    color: #000;
+    font-weight: bold;
+    position: relative;
+}
+
+.step-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: #000;
+}
+
+/* YENİ LEYOUT: YAN YANA DİZİLİM */
+.process-main {
+    flex: 1;
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: center;
+    gap: 150px; /* Görsel ve kutu arası boşluk */
+}
+
+/* GÖRSEL ÇERÇEVESİ */
+.flow-chart-container {
+    border: 3px solid #000; 
+    padding: 13px;
+    background: #fff;
+    box-shadow: 3px 3px 0px #000;
+    height: 65vh;
+}
+
+.flow-img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+/* DETAY KUTUSU */
+.floating-detail-box {
+    background: #000;
+    width: 60%;
+    min-width: 400px;
+    box-shadow: 7px 7px 0px #000;
+}
+
+.detail-header {
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.detail-content {
+    background: #fff;
+    padding: 30px;
+    border: 3px solid #000;
+    margin: 0 4px 4px 4px; 
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.step-value-display {
+    border: 4px solid #000;
+    padding: 10px 40px;
+    font-size: 30px;
+    background: #f0f0f0;
+    margin-top: 20px;
+    box-shadow: 4px 4px 0px #000;
+}
+
+.compact-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.counter-box {
+    border: 2px solid #000;
+    background: #eee;
+    padding: 6px 10px;
+    margin-top: 35px;
+    font-size: 14px;
+}
+.key-gen-step {
+    display: flex;
+    align-items: center; /* Dikeyde ortalar */
+    gap: 10px; /* Metin ile GIF arasındaki boşluk */
+}
+
+/* GIF'in Boyutunu ve Ayarlarını Yapma */
+.step-gif {
+    height: 25px; /* Stepper yüksekliğine uygun bir boyut */
+    width: auto;
+    object-fit: contain;
+    /* Eğer GIF siyah arka planlıysa ve beyaz yapmak isterseniz: */
+    /* filter: invert(1); */ 
+}
+
+/* Aktif olduğunda alt çizginin düzgün görünmesi için: */
+.step-item.active.key-gen-step::after {
+    width: calc(100% - 35px); /* GIF genişliği + gap kadar kısaltıyoruz */
+    left: 0; /* Çizgi metnin altından başlasın */
+}
+
+/* RESULT Adımı İçin Hizalama (GIF Solda) */
+.result-step {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* RESULT aktif olduğunda alt çizgi ayarı */
+/* Çizginin GIF'in altından başlamayıp metni ortalaması için: */
+.step-item.active.result-step::after {
+    width: 100%;
+    left: 0;
+}
+
+/* INPUT Adımı İçin Hizalama (GIF Sağda) */
+.input-step {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* INPUT aktif olduğunda alt çizgi ayarı */
+.step-item.active.input-step::after {
+    width: calc(100% - 35px); 
+    left: 0;
+}

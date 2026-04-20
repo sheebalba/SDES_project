@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S-DES PROJECT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <section id="entry-page">
+        <div class="top-bar-line"></div>
+        <div class="content-wrapper">
+            <h1 class="main-title">S-DES PROJECT</h1>
+            <div class="cat-enter-box">
+                <img src="cat.gif" alt="Cat Logo" class="cat-gif">
+            </div>
+
+            <div class="inputs-wrapper">
+                <div class="input-group">
+                    <p class="input-label">PLAINTEXT (8-BIT)</p>
+                    <div class="bit-row" id="plaintext-input">
+                        <input type="text" maxlength="1" placeholder="0">
+                        <input type="text" maxlength="1" placeholder="0">
+                        <input type="text" maxlength="1" placeholder="0">
+                        <input type="text" maxlength="1" placeholder="0">
+                        <input type="text" maxlength="1" placeholder="0">
+                        <input type="text" maxlength="1" placeholder="0">
+                        <input type="text" maxlength="1" placeholder="0">
+                        <input type="text" maxlength="1" placeholder="0">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <p class="input-label">KEY (10-BIT)</p>
+                    <div class="bit-row" id="key-input">
+                        <input type="text" maxlength="1" placeholder="0">
+                        <input type="text" maxlength="1" placeholder="0">
+                        <input type="text" maxlength="1" placeholder="0">
+                        <input type="text" maxlength="1" placeholder="0">
+                        <input type="text" maxlength="1" placeholder="0">
+                        <input type="text" maxlength="1" placeholder="0">
+                        <input type="text" maxlength="1" placeholder="0">
+                        <input type="text" maxlength="1" placeholder="0">
+                        <input type="text" maxlength="1" placeholder="0">
+                        <input type="text" maxlength="1" placeholder="0">
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <button id="start-system-btn" class="retro-btn">START SYSTEM ►</button>
+    </section>
+
+    <section id="process-page" class="hidden">
+        <header class="compact-stepper">
+            <div class="step-item input-step" data-step="INPUT">
+    <span class="step-text">INPUT</span>
+    <img src="cat2.gif" alt="Input Icon" class="step-gif"></div>
+            <div class="step-item" data-step="IP">IP</div>
+            <div class="step-item key-gen-step" data-step="KEY GEN">
+                <span class="step-text">KEY GEN</span>
+                <img src="anahtar-ikonu.gif" alt="Key Gen Icon" class="step-gif"></div>
+            <div class="step-item" data-step="ROUND 1">ROUND 1</div>
+            <div class="step-item" data-step="ROUND 2">ROUND 2</div>
+            <div class="step-item" data-step="IP-1">IP-1</div>
+            <div class="step-item result-step" data-step="RESULT">
+    <img src="pati.gif" alt="Result Icon" class="step-gif">   
+    <span class="step-text">RESULT</span></div>  
+        </header>
+
+        <main class="process-main">
+            <div class="flow-chart-container">
+                <img src="akıs.png" alt="S-DES Flow Chart" class="flow-img">
+            </div>
+
+            <div class="floating-detail-box">
+                <div class="detail-header">
+                    <span id="step-title">STEP DETAIL: ...</span>
+                    <span class="close-icon">[-]</span>
+                </div>
+                <div class="detail-content" id="step-content"></div>
+            </div>
+        </main>
+
+        <footer class="compact-footer">
+            <button class="retro-btn nav-btn" id="prevBtn">PREV</button>
+            <div class="counter-box">
+                <span id="curr-num">00</span> / <span id="total-num">00</span>
+            </div>
+            <button class="retro-btn nav-btn" id="nextBtn">NEXT</button>
+        </footer>
+    </section>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
