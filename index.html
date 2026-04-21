@@ -20,30 +20,30 @@
                 <div class="input-group">
                     <p class="input-label">PLAINTEXT (8-BIT)</p>
                     <div class="bit-row" id="plaintext-input">
-                        <input type="text" maxlength="1" placeholder="0">
-                        <input type="text" maxlength="1" placeholder="0">
-                        <input type="text" maxlength="1" placeholder="0">
-                        <input type="text" maxlength="1" placeholder="0">
-                        <input type="text" maxlength="1" placeholder="0">
-                        <input type="text" maxlength="1" placeholder="0">
-                        <input type="text" maxlength="1" placeholder="0">
-                        <input type="text" maxlength="1" placeholder="0">
+                        <input type="text" maxlength="1" placeholder="0" inputmode="numeric">
+                        <input type="text" maxlength="1" placeholder="0" inputmode="numeric">
+                        <input type="text" maxlength="1" placeholder="0" inputmode="numeric">
+                        <input type="text" maxlength="1" placeholder="0" inputmode="numeric">
+                        <input type="text" maxlength="1" placeholder="0" inputmode="numeric">
+                        <input type="text" maxlength="1" placeholder="0" inputmode="numeric">
+                        <input type="text" maxlength="1" placeholder="0" inputmode="numeric">
+                        <input type="text" maxlength="1" placeholder="0" inputmode="numeric">
                     </div>
                 </div>
 
                 <div class="input-group">
                     <p class="input-label">KEY (10-BIT)</p>
                     <div class="bit-row" id="key-input">
-                        <input type="text" maxlength="1" placeholder="0">
-                        <input type="text" maxlength="1" placeholder="0">
-                        <input type="text" maxlength="1" placeholder="0">
-                        <input type="text" maxlength="1" placeholder="0">
-                        <input type="text" maxlength="1" placeholder="0">
-                        <input type="text" maxlength="1" placeholder="0">
-                        <input type="text" maxlength="1" placeholder="0">
-                        <input type="text" maxlength="1" placeholder="0">
-                        <input type="text" maxlength="1" placeholder="0">
-                        <input type="text" maxlength="1" placeholder="0">
+                        <input type="text" maxlength="1" placeholder="0" inputmode="numeric">
+                        <input type="text" maxlength="1" placeholder="0" inputmode="numeric">
+                        <input type="text" maxlength="1" placeholder="0" inputmode="numeric">
+                        <input type="text" maxlength="1" placeholder="0" inputmode="numeric">
+                        <input type="text" maxlength="1" placeholder="0" inputmode="numeric">
+                        <input type="text" maxlength="1" placeholder="0" inputmode="numeric">
+                        <input type="text" maxlength="1" placeholder="0" inputmode="numeric">
+                        <input type="text" maxlength="1" placeholder="0" inputmode="numeric">
+                        <input type="text" maxlength="1" placeholder="0" inputmode="numeric">
+                        <input type="text" maxlength="1" placeholder="0" inputmode="numeric">
                     </div>
                 </div>
             </div>
@@ -82,15 +82,50 @@
             </div>
         </main>
 
-        <footer class="compact-footer">
+       <footer class="compact-footer">
             <button class="retro-btn nav-btn" id="prevBtn">PREV</button>
             <div class="counter-box">
                 <span id="curr-num">00</span> / <span id="total-num">00</span>
             </div>
             <button class="retro-btn nav-btn" id="nextBtn">NEXT</button>
+            
+            <button id="shutdownBtn" class="retro-btn" onclick="showEndScreen()" style="margin-left: 10px; background: #fff; color: #000; display: none;">SİSTEMİ KAPAT</button>
         </footer>
     </section>
 
     <script type="module" src="main.js"></script>
+
+   <div id="end-screen" class="screen-overlay" style="display: none;">
+    <div class="terminal-window">
+        
+        
+        <div class="terminal-content">
+            <img src="cat3.gif" alt="Closing Cat" class="end-gif">
+            
+            <div class="result-display">
+                <p>PLAINTEXT: <span id="final-pt">--------</span></p>
+                <p>CIPHERTEXT: <span id="final-ct">--------</span></p>
+            </div>
+
+            <button onclick="location.reload()" class="retro-button">RESET SYSTEM</button>
+        </div>
+    </div>
+</div>
+    <script>
+    // Fonksiyonu window objesine bağlayarak global yapıyoruz
+    window.showEndScreen = function() {
+        // Mevcut sayfayı gizle
+        const processPage = document.getElementById('process-page');
+        if (processPage) {
+            processPage.style.display = 'none';
+        }
+        
+        // Kapanış ekranını göster
+        const endScreen = document.getElementById('end-screen');
+        if (endScreen) {
+            endScreen.style.setProperty('display', 'flex', 'important');
+        }
+    };
+</script>
 </body>
 </html>

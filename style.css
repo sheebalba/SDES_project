@@ -273,3 +273,220 @@ body {
     width: calc(100% - 35px); 
     left: 0;
 }
+
+/* --- ADIM DETAY GÖRSELLERİ (SADECE GÖRSEL) --- */
+.step-visual-tool {
+    margin: -10px 0 5px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* Arka plan ve border'ı kaldırdık */
+}
+
+.table-img {
+    max-width: 400px; /* Boyutu ihtiyacına göre artırabilirsin */
+    height: auto;
+    display: block;
+    /* Çerçeve, padding ve gölgeyi sildik */
+    border: none;
+    background: transparent;
+    box-shadow: none;
+}
+.step-description {
+    /* Mevcut boyutu artırmak için bu değeri yükselt (örn: 22px veya 24px) */
+    font-size: 18px; 
+    
+    /* Metnin daha okunaklı olması için satır aralığı */
+    line-height: 1.5;
+    
+    /* Yazıyı biraz daha belirgin yapmak istersen: */
+    font-weight: 500;
+    
+    /* Altındaki görsel veya sonuçla arasına mesafe koymak için */
+    margin-bottom: -10px;
+    
+    /* Retro temana uygun olması için merkezde tutalım */
+    text-align: left;
+}
+
+.table-img {
+    /* Görselin piksellerini yumuşatmadan, net (keskin) gösterir */
+    image-rendering: pixelated; 
+    image-rendering: crisp-edges;
+}
+.screen-overlay {
+  position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;
+    display: none; 
+    
+    /* TAM MERKEZLEME SİHİRİ */
+    flex-direction: column;
+    justify-content: center; /* Dikeyde ortalar */
+    align-items: center;     /* Yatayda ortalar */
+    z-index: 99999;
+}
+
+
+.end-gif {
+    width: 200px;
+    height: auto;
+    border: none;
+    margin-bottom: 20px;
+    margin-left: 595px;
+    image-rendering: pixelated; /* GIF'in retro görünmesi için */
+}
+
+.typing-text {
+  text-align: center;
+    width: 100%;
+    margin: 5px 0;
+}
+/* Mevcut #end-screen ve [style*="display: flex"] kısımlarını sil, yerine bunu yapıştır: */
+
+#end-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff; /* Arka planı bembeyaz yapar */
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+/* Kapanış ekranındaki o siyah çerçeveli kutuyu tamamen yok eder */
+#end-screen .terminal-window {
+  display: block; /* Flexbox paketleme mantığını iptal eder */
+    width: 100%;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    position: relative; /* İçindekilerin bağımsız hareket etmesine izin verir */
+}
+
+
+
+/* JS tetiklediğinde görünmesi için gerekli olan kural */
+#end-screen[style*="display: flex"] {
+    display: flex !important;
+}
+/* Kapanış ekranındaki butonu giriş sayfasındaki butonla eşitler */
+#end-screen .retro-button {
+   background: #fff;
+    border: 2px solid #000;
+    font-family: 'VT323', monospace;
+    font-size: 20px; 
+    padding: 6px 15px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px #000;
+    margin-top: 40px; /* GIF ile arasını açar */
+    display: block;
+    color: #000;
+    text-align: center;
+    margin-right: auto; 
+    margin-left: 45.5%;
+    position:relative;
+    left:0;
+}
+
+/* Tıklama efekti (Giriş sayfasındakiyle aynı) */
+#end-screen .retro-button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px #000;
+}
+.comparison-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.comp-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comp-label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.comp-value {
+    padding: 15px 25px;
+    border: 3px solid #000;
+    font-size: 24px;
+    background: #fff;
+    box-shadow: 5px 5px 0px #000;
+}
+
+.comp-value.gray {
+    background: #f0f0f0;
+}
+
+.comp-arrow {
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: 25px;
+}
+.ls-comparison-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    scale: 0.85; /* Taşmaları önlemek için önemli */
+}
+
+.comparison-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.comp-value {
+    padding: 10px 20px;
+    border: 3px solid #000;
+    box-shadow: 4px 4px 0px #000;
+    font-size: 22px;
+}
+
+.gray-scale {
+    filter: grayscale(1);
+    opacity: 0.6;
+}
+
+.step-description {
+    white-space: pre-line;
+    text-align: left;
+    font-size: 20px;
+}
+.result-display {
+    margin: 20px 0;
+    padding: 15px;
+    border: none;/* Brutalist yeşil çerçeve */
+    background: none;
+    text-align: center;
+    font-family: 'VT323', monospace;
+}
+
+.result-display p {
+    margin: 5px 0;
+    color: #000;
+    font-weight: medium;
+    font-size: 20px;
+}
+
+.result-display span {
+    color: #000; /* Bit değerleri beyaz olsun */
+    letter-spacing: 2px;
+}
